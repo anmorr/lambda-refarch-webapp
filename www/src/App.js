@@ -50,7 +50,7 @@ function App() {
   }
 
   const getIdToken = () => {
-    const hash = window.location.hash.substr(1);
+    const hash = window.location.hash;
     const objects = hash.split("&");
     objects.forEach(object => {
       const keyVal = object.split("=");
