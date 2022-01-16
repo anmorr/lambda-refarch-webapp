@@ -24,7 +24,7 @@ function App() {
       console.log("=> ID TOKEN AFTER > 0: ", idToken)
     }
     console.log("=> ID TOKEN AFTER <= 0: ", idToken)
-  }, [idToken]);
+  }, []);
 
   axios.interceptors.response.use(response => {
     console.log('Response was received');
@@ -50,7 +50,7 @@ function App() {
   }
 
   const getIdToken = () => {
-    const hash = window.location.hash;
+    const hash = window.location.hash.substr(1);
     const objects = hash.split("&");
     objects.forEach(object => {
       const keyVal = object.split("=");
