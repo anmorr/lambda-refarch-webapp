@@ -147,6 +147,7 @@ function App() {
   return (
     <div className="App">
       <Container>
+        {console.log("=> ID TOKEN BEFORE: ", idToken)}
         <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
           <p dangerouslySetInnerHTML={{ __html: alert }}></p>
         </Alert>
