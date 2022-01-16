@@ -17,10 +17,13 @@ function App() {
   const [toDos, setToDos] = useState([]);
 
   useEffect(() => {
+    console.log("=> ID TOKEN BEFORE: ", idToken)
     getIdToken();
     if (idToken.length > 0) {
       getAllTodos();
+      console.log("=> ID TOKEN AFTER > 0: ", idToken)
     }
+    console.log("=> ID TOKEN AFTER <= 0: ", idToken)
   }, [idToken]);
 
   axios.interceptors.response.use(response => {
