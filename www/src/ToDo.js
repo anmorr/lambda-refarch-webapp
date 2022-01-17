@@ -38,10 +38,10 @@ function ToDo({ toDos, addToDo, deleteToDo, completeToDo }) {
                     {item.item}
                   </Col>
                   <Col xs="5" sm="4">
-                    <Button data-index={index} data-item-id={item.id} onClick={(e) => deleteToDo(index, data-item.id)} color="danger" size="sm" className="float-right toDoButton" title="Delete ToDo">
+                    <Button data-index={index} data-item-id={item.id} onClick={(e) => deleteToDo(index, item.id)} color="danger" size="sm" className="float-right toDoButton" title="Delete ToDo">
                       <span className="oi oi-delete"></span>
                     </Button>
-                    <Button data-index={index} data-item-id={item.id} onClick={(e) => completeToDo(data-item.id)} outline={!item.completed} disabled={item.completed} color="success" size="sm" className="float-right toDoButton" title="Complete ToDo">
+                    <Button data-index={index} data-item-id={item.id} onClick={(e) => completeToDo(item.id)} outline={!item.completed} disabled={item.completed} color="success" size="sm" className="float-right toDoButton" title="Complete ToDo">
                       <span className="oi oi-check"></span>
                     </Button>
                   </Col>

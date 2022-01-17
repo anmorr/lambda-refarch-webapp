@@ -134,16 +134,17 @@ function App() {
     if (itemId === null) return;
     let result 
     try {
-      result = await axios({
-        method: 'POST',
-        url: `${config.api_base_url}/item/${itemId}/done`,
-        headers: {
-          Authorization: idToken
-        }
-      });
-      if (result && result.status === 200) {
-        getAllTodos();
-      }
+      console.log("===> completeToDo itemId: ", itemId)
+      // result = await axios({
+      //   method: 'POST',
+      //   url: `${config.api_base_url}/item/${itemId}/done`,
+      //   headers: {
+      //     Authorization: idToken
+      //   }
+      // });
+      // if (result && result.status === 200) {
+      //   getAllTodos();
+      // }
     } catch (error) {
       console.log("===> result: ",result)
       console.log(error)
