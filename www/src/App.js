@@ -139,6 +139,8 @@ function App() {
       }
     });
 
+    console.log("===> result: ", result)
+
     if (result && result.status === 200) {
       getAllTodos();
     }
