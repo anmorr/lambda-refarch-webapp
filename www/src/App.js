@@ -132,18 +132,20 @@ function App() {
     console.log("===> completeToDo itemId: ", itemId)
     if (itemId === null) return;
 
-    const result = await axios({
-      method: 'POST',
-      url: `${config.api_base_url}/item/${itemId}/done`,
-      headers: {
-        Authorization: idToken
+    try {
+      const result = await axios({
+        method: 'POST',
+        url: `${config.api_base_url}/item/${itemId}/done`,
+        headers: {
+          Authorization: idToken
+        }
+      });
+      if (result && result.status === 200) {
+        getAllTodos();
       }
-    });
-
-    console.log("===> result: ", result)
-
-    if (result && result.status === 200) {
-      getAllTodos();
+    } catch (error) {
+      console.log("===> result: ",result)
+      console.log(error)
     }
   }
 
