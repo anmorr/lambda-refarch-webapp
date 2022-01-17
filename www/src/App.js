@@ -24,7 +24,7 @@ function App() {
       console.log("=> ID TOKEN AFTER > 0: ", idToken)
     }
     console.log("=> ID TOKEN AFTER <= 0: ", idToken)
-  }, [idToken]);
+  }, [idToken, getAllTodos]);
 
   axios.interceptors.response.use(response => {
     console.log('Response was received');
@@ -60,7 +60,7 @@ function App() {
     });
   };
 
-  const getAllTodos = useCallback( () => async () => {
+  const getAllTodos = useCallback(async () => {
     const result = await axios({
       url: `${config.api_base_url}/item/`,
       headers: {
