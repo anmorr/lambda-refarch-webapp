@@ -135,6 +135,8 @@ function App() {
     let result 
     try {
       console.log("===> completeToDo itemId: ", itemId)
+      console.log("===> url: ", `${config.api_base_url}/item/${itemId}/done`)
+      console.log("===> idToken: ", idToken)
       // result = await axios({
       //   method: 'POST',
       //   url: `${config.api_base_url}/item/${itemId}/done`,
