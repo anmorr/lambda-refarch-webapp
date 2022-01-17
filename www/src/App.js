@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Jumbotron, Row, Col, Alert, Button } from 'reactstrap';
 import axios from 'axios';
 import ToDo from './ToDo'
@@ -60,7 +60,7 @@ function App() {
     });
   };
 
-  const getAllTodos = async () => {
+  const getAllTodos = useCallback( () => async () => {
     const result = await axios({
       url: `${config.api_base_url}/item/`,
       headers: {
@@ -78,7 +78,8 @@ function App() {
       console.log(result.data.Items);
       setToDos(result.data.Items);
     }
-  };
+  }, [idToken],
+  )
 
   const addToDo = async (event) => {
     const newToDoInput = document.getElementById('newToDo');
