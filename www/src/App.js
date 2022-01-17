@@ -131,9 +131,9 @@ function App() {
   const completeToDo = async (itemId) => {
     console.log("===> completeToDo itemId: ", itemId)
     if (itemId === null) return;
-
+    let result 
     try {
-      const result = await axios({
+      result = await axios({
         method: 'POST',
         url: `${config.api_base_url}/item/${itemId}/done`,
         headers: {
