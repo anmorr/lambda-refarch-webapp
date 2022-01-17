@@ -129,6 +129,7 @@ function App() {
   }
 
   const completeToDo = async (itemId) => {
+    console.log("===> completeToDo itemId: ", itemId)
     if (itemId === null) return;
 
     const result = await axios({
